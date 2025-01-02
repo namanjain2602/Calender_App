@@ -5,7 +5,12 @@ import { MdDelete } from 'react-icons/md';
 import CompanyForm from './CompanyForm'; // Import the CompanyForm component
 
 function CompanyList() {
-  const [companies, setCompanies] = useState([]);
+  // Initialize with two hardcoded companies
+  const [companies, setCompanies] = useState([
+    { id: 1, name: 'TechCorp', location: 'San Francisco, CA' },
+    { id: 2, name: 'Innovate Ltd.', location: 'London, UK' },
+  ]);
+
   const [showModal, setShowModal] = useState(false);
   const [editingCompany, setEditingCompany] = useState(null); // Store the company being edited
 
@@ -15,7 +20,10 @@ function CompanyList() {
       setCompanies(companies.map((c) => (c.id === company.id ? company : c)));
     } else {
       // If not editing, add a new company
-      setCompanies([...companies, company]);
+      setCompanies([
+        ...companies,
+        { ...company, id: companies.length + 1 }, // Assign a unique ID
+      ]);
     }
     setShowModal(false); // Close the modal
     setEditingCompany(null); // Clear the editing company state
