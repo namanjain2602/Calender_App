@@ -14,37 +14,37 @@ function Navbar() {
           <div className="hidden md:flex space-x-6 items-center">
             <a
               href="/admin/companies"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium"
             >
               Companies
             </a>
             <a
               href="/admin/communication-methods"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium"
             >
               Communication Methods
             </a>
             <a
               href="/user/dashboard"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium"
             >
               Dashboard
             </a>
             <a
               href="/user/notifications"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium"
             >
               Notifications
             </a>
             <a
               href="/user/calendar"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium"
             >
               Calendar
             </a>
             <a
               href="/reports"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium"
             >
               Reports
             </a>
