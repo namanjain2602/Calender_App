@@ -1,70 +1,148 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Calendar Communication Tracker
 
-## Available Scripts
+This is a React-based Calendar Application designed to help organizations track and manage their communications with companies. It enables easy logging of past interactions, planning future communications, and ensuring follow-ups are timely and consistent.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Admin Module
+- **Company Management**: Add, edit, and delete companies, along with details such as name, location, LinkedIn profile, emails, phone numbers, and comments.
+- **Communication Method Management**: Define communication methods (e.g., LinkedIn Post, Email, Phone Call) and manage their sequence and mandatory status.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### User Module
+- **Dashboard**: Visualize company details with communication logs and next scheduled communications, color-coded for overdue or due today.
+- **Communication Action**: Log communications, add notes, and reset highlights for overdue or due tasks.
+- **Notifications**: Display overdue and due communications.
+- **Calendar View**: Manage past and upcoming communications in a calendar interface.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Reporting and Analytics Module (Optional)
+- **Communication Frequency Report**: View usage statistics for each communication method.
+- **Engagement Effectiveness Dashboard**: Track the effectiveness of communication methods.
+- **Overdue Communication Trends**: Analyze overdue communications over time.
+- **Real-Time Activity Log**: Live feed of communication activities.
+- **Downloadable Reports**: Export reports in PDF or CSV format.
 
-### `npm test`
+## Folder Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+/src
+  ├── App.css
+  ├── App.js
+  ├── components
+  │   ├── Admin
+  │   │   ├── CommunicationMethodForm.js
+  │   │   ├── CommunicationMethodList.js
+  │   │   ├── CompanyForm.js
+  │   │   ├── CompanyList.js
+  │   │   └── Reports.js
+  │   ├── home
+  │   │   └── Home.js
+  │   ├── login
+  │   │   └── Login.js
+  │   ├── signup
+  │   │   └── Signup.js
+  │   └── Users
+  │       ├── CalendarView.js
+  │       ├── CommunicationAction.js
+  │       ├── DashboardTable.js
+  │       └── Notifications.js
+  ├── index.css
+  ├── index.js
+  └── shared
+      ├── Footer.js
+      └── Navbar.js
+```
 
-### `npm run build`
+- `App.js`: Main entry point for the application.
+- `components/`: Contains all React components for different modules and views.
+- `shared/`: Contains common components like Navbar and Footer.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Make sure you have the following installed:
 
-### `npm run eject`
+- Node.js (version 14 or higher)
+- npm or yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installing Dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/your-repository-name/calendar-app.git
+   cd calendar-app
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install the necessary dependencies:
+   ```bash
+   npm install
+   ```
+   or, if you are using yarn:
+   ```bash
+   yarn install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Running the Application Locally
 
-## Learn More
+Once the dependencies are installed, you can run the application locally.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Start the development server:
+   ```bash
+   npm start
+   ```
+   or, if you are using yarn:
+   ```bash
+   yarn start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Open your browser and visit `http://localhost:3000` to see the application in action.
 
-### Code Splitting
+### Build for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To build the application for production, use the following command:
+```bash
+npm run build
+```
+This will create an optimized build in the `build/` folder.
 
-### Analyzing the Bundle Size
+### Deployment to Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Push your code to GitHub or any other Git-based version control system.
+2. Go to [Netlify](https://www.netlify.com/) and create a new site from Git.
+3. Link your repository to Netlify and deploy the application.
+4. Netlify will automatically build and deploy your app.
 
-### Making a Progressive Web App
+### Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+If you need to use environment variables, create a `.env` file in the root of the project. Example:
 
-### Advanced Configuration
+```env
+REACT_APP_API_URL=https://your-api-url.com
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Then, you can access these variables in your React components like so:
+```js
+const apiUrl = process.env.REACT_APP_API_URL;
+```
 
-### Deployment
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Admin Users**: Use the Admin Module to manage companies and communication methods.
+- **End Users**: Interact with the Dashboard to manage communications, log actions, and follow up on overdue tasks.
+- **Reporting**: View performance and trends using the Reporting and Analytics Module (optional).
 
-### `npm run build` fails to minify
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We welcome contributions! If you find bugs or have suggestions for new features, feel free to open an issue or submit a pull request.
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Make your changes and commit them (`git commit -am 'Add feature'`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
